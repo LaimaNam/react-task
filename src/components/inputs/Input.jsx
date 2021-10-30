@@ -40,4 +40,9 @@ const InputStyled = styled.input`
   border: 2px solid #d3d3d3;
   padding: 5px;
   padding-left: 30px;
+  outline: none;
+
+  &:focus {
+    border: 2px solid var(--primary-color);
+  }
 `;
