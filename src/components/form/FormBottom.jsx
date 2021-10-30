@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 //components
@@ -14,16 +14,34 @@ import RegistrationValidation from '../../helpers/RegistrationValidation';
 //render props validacija
 
 const FormBottom = () => {
+  //Hooks
+  // -- state
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  // -- custom functions
+  const handleSubmit = (e) => {
+    e.preventdefault();
+    setIsSubmitted(true);
+  };
+
   return (
-    <FormWrapper>
+    <FormWrapper onSubmit={(e) => handleSubmit(e)}>
       <RegistrationValidation
-        render={(validateInput) => (
+        value={name}
+        isSubmitted={isSubmitted}
+        render={(isValid) => (
           <Input
             type="name"
             placeholder="John Smith"
             label="Name"
             icon={<FaRegUser />}
-            validate={validateInput}
+            isValid={isValid}
+            isSubmitted={isSubmitted}
+            onChange={(e) => setName(e.target.value)}
           />
         )}
       />

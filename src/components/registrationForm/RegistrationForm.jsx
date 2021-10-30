@@ -57,6 +57,10 @@ const RegistrationFormLeft = styled.div`
       font-size: 0.9em;
     }
   }
+
+  /* @media (min-width: 900px) {
+
+  } */
 `;
 const RegistrattionFormRigth = styled.div`
   width: calc(100% / 2);

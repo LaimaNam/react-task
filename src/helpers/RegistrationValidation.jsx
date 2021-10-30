@@ -1,13 +1,10 @@
-import React from 'react';
+const RegistrationValidation = ({ value, isSubmitted, render }) => {
+  let isValid = false;
+  if (!value.length && isSubmitted) {
+    return (isValid = true);
+  }
 
-const RegistrationValidation = ({ render, value }) => {
-  const validateInput = (value) => {
-    if (value.length === 0) {
-      return <p>{value} must be filled.</p>;
-    }
-  };
-
-  return render(validateInput);
+  return render(isValid);
 };
 
 export default RegistrationValidation;
