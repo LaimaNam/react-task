@@ -45,18 +45,36 @@ const FormBottom = () => {
           />
         )}
       />
-
-      <Input
-        type="email"
-        placeholder="John@gmail.com"
-        label="Email"
-        icon={<AiOutlineMail />}
+      <RegistrationValidation
+        value={email}
+        isSubmitted={isSubmitted}
+        render={(isValid) => (
+          <Input
+            type="email"
+            placeholder="John@gmail.com"
+            label="Email"
+            icon={<AiOutlineMail />}
+            isValid={isValid}
+            isSubmitted={isSubmitted}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        )}
       />
-      <Input
-        type="password"
-        placeholder="*****"
-        label="Password"
-        icon={<BiLock />}
+
+      <RegistrationValidation
+        value={password}
+        isSubmitted={isSubmitted}
+        render={(isValid) => (
+          <Input
+            type="password"
+            placeholder="*****"
+            label="Password"
+            icon={<BiLock />}
+            isValid={isValid}
+            isSubmitted={isSubmitted}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        )}
       />
       <CommonButton text="Submit" width="100%" />
     </FormWrapper>

@@ -23,7 +23,7 @@ const Input = ({
           isSubmitted={isSubmitted}
         />
       </div>
-      {isValid && <p>Input must be filled</p>}
+      {isValid && <p className="error-msg">Input must be filled</p>}
     </InputGroupWrapper>
   );
 };
@@ -45,6 +45,11 @@ const InputGroupWrapper = styled.div`
       left: 8px;
       fill: #707070;
     }
+  }
+
+  .error-msg {
+    color: red;
+    font-size: 0.8em;
   }
 `;
 
