@@ -23,7 +23,7 @@ const Input = ({
           isSubmitted={isSubmitted}
         />
       </div>
-      {isValid ? <p>Input must be filled</p> : <p>Correct </p>}
+      {isValid && <p>Input must be filled</p>}
     </InputGroupWrapper>
   );
 };
