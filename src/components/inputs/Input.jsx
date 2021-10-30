@@ -1,14 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = ({ type, placeholder, label, icon }) => {
+const Input = ({
+  type,
+  placeholder,
+  label,
+  icon,
+  onChange,
+  isSubmitted,
+  isValid,
+}) => {
   return (
     <InputGroupWrapper>
       {label && <label>{label}</label>}
       <div>
         {icon}
-        <InputStyled type={type} placeholder={placeholder} />
+        <InputStyled
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+          isValid={isValid}
+          isSubmitted={isSubmitted}
+        />
       </div>
+      {isValid ? <p>Input must be filled</p> : <p>Correct </p>}
     </InputGroupWrapper>
   );
 };

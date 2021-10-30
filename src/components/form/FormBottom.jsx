@@ -24,7 +24,7 @@ const FormBottom = () => {
 
   // -- custom functions
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     setIsSubmitted(true);
   };
 
