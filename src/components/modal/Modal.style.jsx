@@ -23,6 +23,6 @@ export const ModalWrapper = styled.div`
 `;
 
 export const StyledModal = styled.div`
-  width: 70%;
-  max-width: 100%;
+  width: 100%;
+  max-width: 750px;
 `;

@@ -58,6 +58,8 @@ const InputStyled = styled.input`
   width: 100%;
   border-radius: 5px;
   border: 2px solid #d3d3d3;
+  /* border: ${({ isSubmitted, isValid }) =>
+    !isSubmitted && !isValid ? '2px solid #d3d3d3' : '2px solid red'}; */
   padding: 5px;
   padding-left: 30px;
   outline: none;
